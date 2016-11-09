@@ -1,0 +1,45 @@
+.game {
+  display        : flex;
+  flex           : 1;
+  flex-direction : column;
+
+  .meta {
+    margin : 15px;
+
+    &__header {
+      background-color : $base16-aqua;
+      font-weight      : 900;
+    }
+
+    &__text {
+      display : flex;
+
+      .db,
+      .season {
+        flex : 1;
+
+        &_header {
+          font-weight : 700;
+        }
+      }
+    }
+  }
+
+  .plays {
+    display        : flex;
+    margin         : 0 15px 15px;
+    flex           : 1;
+    flex-direction : column;
+
+    &__header {
+      background-color : $base16-aqua;
+      flex-shrink      : 0;
+    }
+
+    &__content {
+      padding  : 0;
+      overflow : auto;
+      flex     : 1;
+    }
+  }
+}

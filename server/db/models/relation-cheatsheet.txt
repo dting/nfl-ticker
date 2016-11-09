@@ -1,0 +1,100 @@
+
+
+AggPlay
+-------
+belongs to        play                                     as Gsis 
+belongs to        drive                                    as Gsis 
+belongs to        game                                     as Gsis 
+
+
+Drive
+-----
+has many          agg_play                                 as AggPlayGsisIdFkey1s 
+has many          play                                     as PlayGsisIdFkeys 
+has many          play_player                              as PlayPlayerGsisIdFkey1s 
+belongs to        game                                     as Gsis 
+belongs to        team                                     as RelatedPosTeam 
+belongs to many   play                                     as AggPlayGses 
+belongs to many   game                                     as AggPlayGses 
+belongs to many   game                                     as PlayGses 
+belongs to many   team                                     as PlayPosTeams 
+belongs to many   play                                     as PlayPlayerGses 
+belongs to many   game                                     as PlayPlayerGses 
+belongs to many   player                                   as PlayPlayerPlayers 
+belongs to many   team                                     as PlayPlayerTeams 
+
+
+Game
+----
+has many          agg_play                                 as AggPlayGsisIdFkey2s 
+has many          drive                                    as DriveGsisIdFkeys 
+has many          play                                     as PlayGsisIdFkey1s 
+has many          play_player                              as PlayPlayerGsisIdFkey2s 
+belongs to        team                                     as RelatedAwayTeam 
+belongs to        team                                     as RelatedHomeTeam 
+belongs to many   play                                     as AggPlayGses 
+belongs to many   drive                                    as AggPlayGses 
+belongs to many   team                                     as DrivePosTeams 
+belongs to many   drive                                    as PlayGses 
+belongs to many   team                                     as PlayPosTeams 
+belongs to many   play                                     as PlayPlayerGses 
+belongs to many   drive                                    as PlayPlayerGses 
+belongs to many   player                                   as PlayPlayerPlayers 
+belongs to many   team                                     as PlayPlayerTeams 
+
+
+Metum
+-----
+
+
+Play
+----
+has many          agg_play                                 as AggPlayGsisIdFkeys 
+has many          play_player                              as PlayerGsisIdFkeys 
+belongs to        drive                                    as Gsis 
+belongs to        game                                     as Gsis 
+belongs to        team                                     as RelatedPosTeam 
+belongs to many   drive                                    as AggPlayGses 
+belongs to many   game                                     as AggPlayGses 
+belongs to many   drive                                    as PlayPlayerGses 
+belongs to many   game                                     as PlayPlayerGses 
+belongs to many   player                                   as PlayPlayerPlayers 
+belongs to many   team                                     as PlayPlayerTeams 
+
+
+Player
+------
+has many          play_player                              as PlayPlayerPlayerIdFkeys 
+belongs to        team                                     as RelatedTeam 
+belongs to many   play                                     as PlayPlayerGses 
+belongs to many   drive                                    as PlayPlayerGses 
+belongs to many   game                                     as PlayPlayerGses 
+belongs to many   team                                     as PlayPlayerTeams 
+
+
+PlayPlayer
+----------
+belongs to        play                                     as Gsis 
+belongs to        drive                                    as Gsis 
+belongs to        game                                     as Gsis 
+belongs to        player                                   as Player 
+belongs to        team                                     as RelatedTeam 
+
+
+Team
+----
+has many          drive                                    as DrivePosTeamFkeys 
+has many          game                                     as GameAwayTeamFkeys 
+has many          game                                     as GameHomeTeamFkeys 
+has many          play                                     as PlayPosTeamFkeys 
+has many          player                                   as PlayerTeamFkeys 
+has many          play_player                              as PlayPlayerTeamFkeys 
+belongs to many   game                                     as DriveGses 
+belongs to many   team                                     as GameHomeTeams 
+belongs to many   team                                     as GameAwayTeams 
+belongs to many   drive                                    as PlayGses 
+belongs to many   game                                     as PlayGses 
+belongs to many   play                                     as PlayPlayerGses 
+belongs to many   drive                                    as PlayPlayerGses 
+belongs to many   game                                     as PlayPlayerGses 
+belongs to many   player                                   as PlayPlayerPlayers 

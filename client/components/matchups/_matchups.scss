@@ -1,0 +1,16 @@
+.matchups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.matchup {
+  display: flex;
+  flex-direction: column;
+
+  &_dow {
+    display: flex;
+    justify-content: center;
+  }
+}
