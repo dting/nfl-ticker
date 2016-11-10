@@ -1,5 +1,5 @@
 const u = require('../../util');
-const { Game, Drive } = require('../../db');
+const { Drive, Game, Play, Sequelize } = require('../../db');
 
 const controller = {};
 
@@ -15,7 +15,15 @@ controller.detail = function index(req, res) {
     include: [{
       model: Drive,
       as: 'DriveGsisIdFkeys',
+      include: [{
+        model: Play,
+        as: 'PlayGsisIdFkeys',
+        where: Sequelize.literal('"DriveGsisIdFkeys.PlayGsisIdFkeys"."drive_id" = "DriveGsisIdFkeys"."drive_id"'),
+      }],
     }],
+    order: [
+      [{ model: Drive, as: 'DriveGsisIdFkeys' }, 'drive_id'],
+    ],
   })
     .then(u.respondWithResult(res))
     .catch(u.handleError(res));

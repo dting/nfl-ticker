@@ -54,7 +54,7 @@ class HomePage extends React.Component {
       'FG',
       'FGB',
     ];
-    this.props.matchupsActions.get(seasonYear, seasonType, 9);
+    this.props.matchupsActions.get(seasonYear, seasonType, week);
     this.props.playsActions.get(notes, seasonYear, seasonType, week);
   }
 

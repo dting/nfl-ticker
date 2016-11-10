@@ -1,0 +1,79 @@
+.score-board {
+  display        : flex;
+  width          : 380px;
+  margin         : 15px auto;
+  border         : 1px solid black;
+  flex-direction : column;
+  flex-shrink    : 0;
+
+  &_header {
+    display         : flex;
+    min-height      : 57px;
+    background      : $base16-green;
+    flex            : 1;
+    justify-content : center;
+
+    > div {
+      display     : flex;
+      margin      : 5px;
+      text-align  : center;
+      align-items : center;
+    }
+  }
+
+  &_labels {
+    display     : flex;
+    flex-shrink : 0;
+
+    > div {
+      padding         : 5px;
+      border-top      : 1px solid black;
+      text-align      : center;
+      align-items     : center;
+      flex            : 1;
+      justify-content : center;
+
+      &:not(:last-child) {
+        border-right : 1px solid black;
+      }
+    }
+
+    .icon-spacer {
+      min-width   : 82px;
+      flex-shrink : 0;
+    }
+  }
+
+  &_scores {
+    display        : flex;
+    flex-direction : column;
+    flex-shrink    : 0;
+
+    .scores {
+      display : flex;
+    }
+
+    img {
+      margin-bottom : -1px;
+      margin-left   : -1px;
+      border        : 1px solid black;
+    }
+
+    &__quarters {
+      display : flex;
+      flex    : 1;
+
+      > div {
+        display         : flex;
+        border-top      : 1px solid black;
+        align-items     : center;
+        flex            : 1;
+        justify-content : center;
+
+        &:not(:last-child) {
+          border-right : 1px solid black;
+        }
+      }
+    }
+  }
+}

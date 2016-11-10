@@ -8,7 +8,14 @@
         "./containers/containers";
 
 * {
-  box-sizing : border-box;
+  box-sizing  : border-box;
+}
+
+body {
+  font-family : 'Roboto',
+                'Helvetica Neue',
+                'Helvetica',
+                sans-serif;
 }
 
 #root {
